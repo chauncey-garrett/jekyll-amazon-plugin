@@ -105,14 +105,14 @@ module Jekyll
         type = $~['type'].strip
         asin = $~['asin'].strip.gsub(/"|&ldquo;|&rdquo;/, '')
       else
-        raise 'parametor error for amazon tag'
+        raise 'parameter error for amazon tag'
       end
 
       AmazonResultCache.instance.setup(context)
       item = AmazonResultCache.instance.item_lookup(asin)
 
       if item.nil?
-        raise "item data empty asin %s" % [asin]
+        raise "item data empty ASIN %s" % [asin]
       end
 
       self.send(type, item)
