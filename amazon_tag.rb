@@ -101,7 +101,7 @@ module Jekyll
     end
 
     def render(context)
-      if @params =~ /(?<type>(text|(small|large|medium)?_?image|detail|title)\s+)(?<asin>\S+)/i
+      if @params =~ /(?<type>(text|(small|large|medium)?_?image|detail|title|url)\s+)(?<asin>\S+)/i
         type = $~['type'].strip
         asin = $~['asin'].strip.gsub(/"|&ldquo;|&rdquo;/, '')
       else
@@ -118,6 +118,11 @@ module Jekyll
       self.send(type, item)
     end
 
+    def url(item)
+      url = item[:item_page_url]
+      '%s' % [url]
+    end
+
     def title(item)
       url = item[:item_page_url]
       title = item[:title]
@@ -127,8 +132,8 @@ module Jekyll
     alias text title
 
     def image(item, size = 'medium')
-      image_url = item["#{size}_image_url".to_sym]
       url = item[:item_page_url]
+      image_url = item["#{size}_image_url".to_sym]
       '<a href="%s"><img src="%s" /></a>' % [url, image_url]
     end
 
