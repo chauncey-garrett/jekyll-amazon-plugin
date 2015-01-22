@@ -1,5 +1,5 @@
 # Amazon Plugin for Jekyll
-This  plugin is inspired [Amazon Liquid Filters for jekyll](http://base0.net/posts/amazon-liquid-filters-for-jekyll/).
+This  plugin is inspired [Amazon Liquid Filters for Jekyll](http://base0.net/posts/amazon-liquid-filters-for-jekyll/).
 
 ## How to install
 
@@ -18,18 +18,15 @@ or by gem command
 
     gem install stringex
 
-
 ### Get amazon_tab.rb
 
     cd plugins
     wget https://raw.github.com/longkey1/jekyll-amazon-plugin/master/amazon_tag.rb
 
-
 or by git-submodule
 
     cd /path/to/jekyll
     git submodule add git://github.com/longkey1/jekyll-amazon-plugin.git _plugins/amazon
-
 
 ### Configuring
 
@@ -43,7 +40,6 @@ or by git-submodule
     + amazon_cache_dir:     '.amazon-cache'      # default '.amazon-cache'
     + amazon_country:       'jp'                 # default 'en'
     + amazon_local:         'ja'                 # default 'en'
-
 
 ## Usage
 
@@ -60,7 +56,7 @@ type: text, small_image, medium_image, large_image, title, detail, image
 
 ### Type detail:
 
-[type] detail display item with object layouted by css.
+[type] detail display item with object layout by CSS.
 If you want to use this option move `_amazon_tag.scss` file to `/path/to/jekyll/_sass` directory.
 
     mv _amazon_tag.scss /path/to/jekyll/sass
