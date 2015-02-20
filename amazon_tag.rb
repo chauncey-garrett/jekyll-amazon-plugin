@@ -134,7 +134,7 @@ module Jekyll
     def image(item, size = 'medium')
       url = item[:item_page_url]
       image_url = item["#{size}_image_url".to_sym]
-      '<a href="%s"><img src="%s" /></a>' % [url, image_url]
+      '<a class="ignore-external-link-icon" href="%s"><img src="%s" /></a>' % [url, image_url]
     end
 
     def make_image_alias_methods
@@ -175,7 +175,7 @@ module Jekyll
 
     def detail(item)
       res ='<div class=amazon_tag>'
-      res += '<a target="_blank" href="%s"><img src="%s"></img></a>' %
+      res += '<a class="ignore-external-link-icon" target="_blank" href="%s"><img src="%s"></img></a>' %
         [item[:item_page_url], item[:medium_image_url] ]
       res += '<div class="item_detail">'
       res += print_product_content item, 40
