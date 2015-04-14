@@ -174,10 +174,10 @@ module Jekyll
     end
 
     def detail(item)
-      res ='<div class=amazon_tag>'
+      res ='<div class="amazon-tag">'
       res += '<a class="ignore-external-link-icon" target="_blank" href="%s"><img src="%s"></img></a>' %
         [item[:item_page_url], item[:medium_image_url] ]
-      res += '<div class="item_detail">'
+      res += '<div class="item-detail">'
       res += print_product_content item, 40
       res += '</div>' * 2
     end
